@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production && node -e \"const fs=require('fs');
+    fs.mkdirSync('build',{recursive:true});fs.copyFileSync('public/index.html','build/index.html');fs.copyFileSync('dist/bundle.js','build/bundle.js')\""
   }
 }
